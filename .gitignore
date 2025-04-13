@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+metaflow_env/
+.env/
+.venv/
+*.env
+
+# Metaflow cache & runs
+.metaflow/
+results/
+saved_models/
+
+# MLflow runs
+mlruns/
+
+# Dataset (nếu chứa data thật)
+dataset/
+
+# Jupyter notebook checkpoints (nếu dùng notebook)
+.ipynb_checkpoints/
+
+# VSCode settings (nếu không muốn share)
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
