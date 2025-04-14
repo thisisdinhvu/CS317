@@ -1,3 +1,3 @@
-from src.new_pipeline import DiabetesClassificationFlow
+from src.pipeline import DiabetesClassificationFlow
 if __name__ == "__main__":
     DiabetesClassificationFlow()
