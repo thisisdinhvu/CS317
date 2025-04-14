@@ -1,4 +1,4 @@
-# CS317: Lab 1
+# CS317: Lab 1 – Diabetes Classification Pipeline
 
 This project is part of the **CS317** course and demonstrates a full **machine learning workflow** using **Metaflow** and **MLflow**—from data preprocessing to model training, evaluation, and deployment. The pipeline is designed to be **modular**, **reproducible**, and **scalable**, supporting multi-model training and experiment tracking.
 
@@ -82,34 +82,10 @@ python3 -m venv metaflow_env
 source metaflow_env/bin/activate
 ```
 
-### 3. Install Docker
+### 3. Install Docker (if you didn't install before)
 
-If you don’t already have Docker installed:
-
-- **Ubuntu:**
-
-```bash
-sudo apt update
-sudo apt install docker.io
-sudo systemctl start docker
-sudo systemctl enable docker
-```
-
-- **Add user to Docker group** (optional, to avoid `sudo` with docker):
-
-```bash
-sudo usermod -aG docker $USER
-newgrp docker
-```
-
-- **Verify Docker is working**:
-
-```bash
-docker run hello-world
-```
-
-- **If you're unsure, check out this beginner-friendly tutorial:**  
-  [YouTube: Docker Desktop Setup](https://www.youtube.com/watch?v=ZyBBv1JmnWQ&ab_channel=CodeBear)
+Follow this guide to install Docker on Ubuntu:
+[YouTube: Docker Desktop Setup](https://www.youtube.com/watch?v=ZyBBv1JmnWQ&ab_channel=CodeBear)
 
 ### 4. Set Up Metaflow Environment
 
