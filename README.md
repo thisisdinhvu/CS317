@@ -73,7 +73,7 @@ The machine learning pipeline is built using [Metaflow](https://docs.metaflow.or
 
 ```bash
 git clone https://github.com/thisisdinhvu/CS317
-cd your-repo-name
+cd CS317
 ```
 
 ### 2. Set Up Python Environment
