@@ -1,11 +1,30 @@
-## 👥 Members
+<p align="center">
+  <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: 5;">
+    <img src="https://i.imgur.com/WmMnSRt.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology">
+  </a>
+</p>
 
-- Nguyễn Đình Vũ - 22521692  
-- Ngô Thành Trung - 22521560  
-- Đinh Nhật Trường - 22521575
+<!-- Title -->
+<h1 align="center"><b>CS317.P21 - PHÁT TRIỂN VÀ VẬN HÀNH HỆ THỐNG MÁY HỌC</b></h1>
+
+## COURSE INTRODUCTIOM
+<a name="gioithieumonhoc"></a>
+* *Course Title*: Phát triển và vận hành hệ thống máy học
+* *Course Code*: CS317.P21
+* *Year*: 2024-2025
+
+## ACADEMIC ADVISOR
+<a name="giangvien"></a>
+* *Đỗ Văn Tiến* - tiendv@uit.edu.vn
+* *Lê Trần Trọng Khiêm* - khiemltt@uit.edu.vn
+
+## MEMBERS
+<a name="thanhvien"></a>
+* Nguyễn Đình Vũ - 22521692
+* Ngô Thành Trung - 22521560
+* Đinh Nhật Trường - 22521575
 
 ---
-  
 # CS317: Lab 1 – Diabetes Classification Pipeline
 
 This project is part of the **CS317** course and demonstrates a full **machine learning workflow** using **Metaflow** and **MLflow**—from data preprocessing to model training, evaluation, and deployment. The pipeline is designed to be **modular**, **reproducible**, and **scalable**, supporting multi-model training and experiment tracking.
