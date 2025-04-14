@@ -193,6 +193,9 @@ Each model is assessed with:
 All results are printed in the terminal and stored in MLflow.
 
 ---
+## Tutorial:
+[Tutorial](https://www.youtube.com/watch?v=mCJgK6Eq-nE)
+---
 
 ## 📬 Contact
 
