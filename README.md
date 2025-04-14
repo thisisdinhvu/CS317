@@ -82,7 +82,7 @@ python3 -m venv metaflow_env
 source metaflow_env/bin/activate
 ```
 
-### 3. Install Docker (if you didn't install before)
+### 3. Install Docker (if you haven't installed it before)
 
 Follow this guide to install Docker on Ubuntu:
 [YouTube: Docker Desktop Setup](https://www.youtube.com/watch?v=ZyBBv1JmnWQ&ab_channel=CodeBear)
