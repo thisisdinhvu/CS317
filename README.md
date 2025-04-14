@@ -153,7 +153,7 @@ After running your pipeline, your terminal may look like this:
 
 ---
 
-## 🥺 Sample Results
+## Sample Results
 
 Each model is evaluated with:
 
@@ -165,16 +165,6 @@ Each model is evaluated with:
 - Classification Report
 
 You can find all metrics in the terminal logs and MLflow dashboard.
-
----
-
-## 💡 Contributions & Improvements
-
-Feel free to fork this repo and experiment with:
-- Adding new models (e.g., XGBoost, SVM)
-- Expanding metrics
-- Enabling parallel processing of model training
-- Integrating feature importance analysis
 
 ---
 
