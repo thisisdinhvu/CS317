@@ -7,7 +7,7 @@
 <!-- Title -->
 <h1 align="center"><b>CS317.P21 - PHÁT TRIỂN VÀ VẬN HÀNH HỆ THỐNG MÁY HỌC</b></h1>
 
-## COURSE INTRODUCTIOM
+## COURSE INTRODUCTION
 <a name="gioithieumonhoc"></a>
 * *Course Title*: Phát triển và vận hành hệ thống máy học
 * *Course Code*: CS317.P21
