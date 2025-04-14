@@ -1,3 +1,11 @@
+## 👥 Members
+
+- Nguyễn Đình Vũ - 22521692  
+- Ngô Thành Trung - 22521560  
+- Đinh Nhật Trường - 22521575
+
+---
+  
 # CS317: Lab 1 – Diabetes Classification Pipeline
 
 This project is part of the **CS317** course and demonstrates a full **machine learning workflow** using **Metaflow** and **MLflow**—from data preprocessing to model training, evaluation, and deployment. The pipeline is designed to be **modular**, **reproducible**, and **scalable**, supporting multi-model training and experiment tracking.
