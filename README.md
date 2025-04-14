@@ -1,73 +1,72 @@
 # CS317: Lab 1
 
-This project is part of the CS317 course and demonstrates a complete machine learning workflow—from data preprocessing to model training, evaluation, and deployment—using **Metaflow** and **MLflow**. The pipeline is designed to train multiple models and track their performance in a reproducible and scalable way.
+This project is part of the **CS317** course and demonstrates a full **machine learning workflow** using **Metaflow** and **MLflow**—from data preprocessing to model training, evaluation, and deployment. The pipeline is designed to be **modular**, **reproducible**, and **scalable**, supporting multi-model training and experiment tracking.
 
 ---
 
-## 🔍 Project Overview
+## 🔍 Overview
 
-This project tackles the problem of diabetes classification using multiple machine learning models. The key highlights include:
+We tackle the **diabetes classification** problem using multiple machine learning models. This project showcases:
 
-- **Multi-model training** with hyperparameter tuning using `GridSearchCV`.
-- **Model tracking** and **versioning** with MLflow.
-- **Pipeline orchestration** using Metaflow, enabling step-wise execution, caching, and visualization.
-- **Evaluation artifacts** such as confusion matrices and classification reports are saved automatically.
-- **Modular and extensible design**, allowing easy addition of new models or metrics.
+- 🔁 **Multi-model training** with hyperparameter tuning via `GridSearchCV`.
+- 📈 **Experiment tracking and versioning** with MLflow.
+- 🧹 **Step-wise pipeline orchestration** using Metaflow.
+- 📊 Automatic saving of evaluation artifacts like **confusion matrices** and **classification reports**.
+- 🧱 **Modular design**—easily add new models or metrics.
 
 ---
 
 ## 🧠 Pipeline Structure
 
-The machine learning pipeline is built using [Metaflow](https://docs.metaflow.org/) and includes the following steps:
+Built using [Metaflow](https://docs.metaflow.org/), the pipeline consists of these stages:
 
 1. ### `start`
-   - Initializes the flow and starts the pipeline.
+   - Initializes the pipeline.
 
 2. ### `load_and_preprocess`
-   - Loads the dataset and applies preprocessing (e.g., cleaning, scaling, splitting).
-   - The data is split into train, validation, and test sets.
+   - Loads and cleans the dataset.
+   - Applies feature scaling and splits data into train, validation, and test sets.
 
 3. ### `train_models`
-   - Trains four different classifiers:  
-     - Random Forest  
-     - Logistic Regression  
-     - K-Nearest Neighbors  
+   - Trains the following models with `GridSearchCV` for hyperparameter tuning:
+     - Random Forest
+     - Logistic Regression
+     - K-Nearest Neighbors
      - Decision Tree
-   - Hyperparameters are tuned using `GridSearchCV`.
-   - Best models are logged to MLflow with their optimal parameters.
+   - Logs all models and parameters to MLflow.
 
 4. ### `validate_models`
-   - Each trained model is evaluated on the validation set.
-   - F1 scores are computed to help compare model performance before testing.
+   - Evaluates models on the validation set using F1 Score for comparison.
 
 5. ### `test_models`
-   - The selected models are evaluated on the test set.
-   - Metrics like accuracy, precision, recall, F1-score, and confusion matrix are logged.
-   - Classification reports and confusion matrices are saved locally and in MLflow.
+   - Evaluates final models on the test set.
+   - Logs accuracy, precision, recall, F1 score, and confusion matrix to MLflow.
+   - Saves visual reports locally and to MLflow.
 
 6. ### `save_models`
-   - Best trained models are serialized using `joblib` and saved to disk for future use.
+   - Saves trained models to disk using `joblib`.
 
 7. ### `end`
-   - Summarizes and prints evaluation results of all models.
+   - Prints a summary of results for all models.
 
 ---
 
-## 🛠 Technologies Used
+## 🚰 Technologies
 
-| Framework       | Description                                                                 |
-|----------------|-----------------------------------------------------------------------------|
-| **Metaflow**    | Used to define and manage the ML pipeline with ease, enabling reproducibility and UI visualization. |
-| **MLflow**      | Provides model tracking, logging, and a UI for monitoring experiments and metrics. |
-| **scikit-learn**| Used for building and training machine learning models, including hyperparameter tuning. |
-| **matplotlib / seaborn** | Used for visualizing confusion matrices. |
-| **joblib**      | Saves models efficiently to disk for later use. |
+| Tool/Library         | Purpose                                                                 |
+|----------------------|-------------------------------------------------------------------------|
+| **Metaflow**         | Orchestrates the ML pipeline with step-wise execution and visualization |
+| **MLflow**           | Logs model performance, parameters, and artifacts                        |
+| **scikit-learn**     | Core ML library (models + `GridSearchCV`)                                |
+| **matplotlib / seaborn** | Visualizes evaluation metrics like confusion matrices             |
+| **joblib**           | Efficiently saves trained models                                         |
+| **Docker**           | Required for running `metaflow-dev` environment                          |
 
 ---
 
-## 🚀 Installation & Setup
+## ⚙️ Installation & Setup
 
-> **Note**: This project is intended to run on **Ubuntu**. If you're on Windows, consider using WSL or a VM.
+> **Note**: This project is optimized for **Ubuntu/Linux** systems. If you're using **Windows**, consider using **WSL** or a **virtual machine**.
 
 ### 1. Clone the Repository
 
@@ -81,23 +80,58 @@ cd CS317
 ```bash
 python3 -m venv metaflow_env
 source metaflow_env/bin/activate
-pip install metaflow
-metaflow-dev up
-(remember to install docker desktop , tutorial: https://www.youtube.com/watch?v=ZyBBv1JmnWQ&ab_channel=CodeBear)
 ```
 
-Press `Enter` when prompted by `metaflow-dev`.
+### 3. Install Docker
 
-Visit: [http://localhost:10350/](http://localhost:10350/)  
-Wait until all services are fully active.
+If you don’t already have Docker installed:
 
-Your terminal should look like this after setup:
+- **Ubuntu:**
+
+```bash
+sudo apt update
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+- **Add user to Docker group** (optional, to avoid `sudo` with docker):
+
+```bash
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+- **Verify Docker is working**:
+
+```bash
+docker run hello-world
+```
+
+- **If you're unsure, check out this beginner-friendly tutorial:**  
+  [YouTube: Docker Desktop Setup](https://www.youtube.com/watch?v=ZyBBv1JmnWQ&ab_channel=CodeBear)
+
+### 4. Set Up Metaflow Environment
+
+Install Metaflow and launch the local development environment:
+
+```bash
+pip install metaflow
+metaflow-dev up
+```
+
+> When prompted, **press `Enter`** to continue setup.
+
+Once ready, go to: [http://localhost:10350/](http://localhost:10350/)  
+Wait until all services are marked as **healthy**.
+
+You should see a screen similar to this:
 
 ![Metaflow Terminal](https://github.com/truong04/MLOPS/blob/main/image/metaflow-dev-screen.png?raw=true)
 
-### 3. (Optional) Set Up Conda and Mamba
+### 5. (Optional) Install Conda and Mamba
 
-If you don’t already have them:
+Recommended for managing dependencies:
 
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -106,7 +140,7 @@ source ~/miniconda3/etc/profile.d/conda.sh
 conda install mamba -n base -c conda-forge
 ```
 
-Activate your environments:
+Then activate:
 
 ```bash
 eval "$(mamba shell hook --shell bash)"
@@ -114,25 +148,40 @@ mamba activate metaflow-dev
 source metaflow_env/bin/activate
 ```
 
-### 4. Install Project Requirements
+### 6. Prepare Environment & Install Dependencies
+
+Ensure `metaflow-dev` shell is active:
 
 ```bash
+eval "$(mamba shell hook --shell bash)"
+mamba activate metaflow-dev
+source metaflow_env/bin/activate
+
+metaflow-dev shell
+
+# Re-activate environment after entering metaflow shell
+
+eval "$(mamba shell hook --shell bash)"
+mamba activate metaflow-dev
+source metaflow_env/bin/activate
+
 pip install -r requirements.txt
 ```
 
 ---
 
-## ▶️ How to Run the Pipeline
+## ▶️ Running the Pipeline
 
-From the project root, activate your environment and run:
+Once your environment is ready, run the pipeline:
 
 ```bash
 python app.py run
 ```
 
-You’ll see a URL in the terminal where you can view your pipeline in the Metaflow UI.
+To view the pipeline in Metaflow UI:  
+Visit [http://localhost:10350/](http://localhost:10350/)
 
-To view model performance and experiment details in MLflow:
+To view experiment logs and metrics in MLflow:
 
 ```bash
 mlflow ui
@@ -140,38 +189,36 @@ mlflow ui
 
 Then go to: [http://localhost:5000](http://localhost:5000)
 
-After running your pipeline, your terminal may look like this:
+Sample output after running:
 
 ![Metaflow Results](https://github.com/truong04/MLOPS/blob/main/image/RESULT.png?raw=true)
 
 ---
 
-## 📂 Output
+## 📂 Output Files
 
-- Trained models saved to `saved_models/`
-- Evaluation metrics and visualizations saved to `results/`
-- All runs and artifacts are logged in MLflow
+- Trained models: `saved_models/`
+- Evaluation reports and plots: `results/`
+- Logged runs and artifacts: MLflow UI
 
 ---
 
-## Evaluation
+## 📊 Evaluation Metrics
 
-Each model is evaluated with:
+Each model is assessed with:
 
 - Accuracy
 - Precision
 - Recall
 - F1 Score
 - Confusion Matrix
-- Classification Report
+- Full Classification Report
 
-You can find all metrics in the terminal logs and MLflow dashboard.
+All results are printed in the terminal and stored in MLflow.
 
 ---
 
 ## 📬 Contact
 
-For any questions or suggestions, please open an issue or reach out via GitHub.
-
----
+For questions, feedback, or contributions, feel free to open an issue or contact via GitHub.
 
