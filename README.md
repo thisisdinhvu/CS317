@@ -153,7 +153,7 @@ After running your pipeline, your terminal may look like this:
 
 ---
 
-## Sample Results
+## Evaluation
 
 Each model is evaluated with:
 
