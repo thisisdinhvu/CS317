@@ -83,7 +83,7 @@ python3 -m venv metaflow_env
 source metaflow_env/bin/activate
 pip install metaflow
 metaflow-dev up
-(remember to install docker desktop)
+(remember to install docker desktop , tutorial: https://www.youtube.com/watch?v=ZyBBv1JmnWQ&ab_channel=CodeBear)
 ```
 
 Press `Enter` when prompted by `metaflow-dev`.
