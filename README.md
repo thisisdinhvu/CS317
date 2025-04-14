@@ -72,7 +72,7 @@ The machine learning pipeline is built using [Metaflow](https://docs.metaflow.or
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/thisisdinhvu/CS317
 cd your-repo-name
 ```
 
@@ -126,7 +126,7 @@ pip install -r requirements.txt
 From the project root, activate your environment and run:
 
 ```bash
-python new_pipeline.py run
+python app.py run
 ```
 
 You’ll see a URL in the terminal where you can view your pipeline in the Metaflow UI.
