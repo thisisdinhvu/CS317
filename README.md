@@ -78,7 +78,7 @@ Built using [Metaflow](https://docs.metaflow.org/), the pipeline consists of the
 
 ---
 
-## 🚰 Technologies
+##  Technologies
 
 | Tool/Library         | Purpose                                                                 |
 |----------------------|-------------------------------------------------------------------------|
@@ -174,7 +174,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶ Running the Pipeline
+##  Running the Pipeline
 
 Once your environment is ready, run the pipeline:
 
