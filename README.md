@@ -33,9 +33,9 @@ This project is part of the **CS317** course and demonstrates a full **machine l
 
 ## 🔍 Overview
 
-We tackle the **diabetes classification** problem using multiple machine learning models. This project showcases:
+We tackle the **diabetes classification** problem by **predicting the risk of diabetes** from medical records using multiple machine learning models. This project showcases:
 
-- 🔁 **Multi-model training** with hyperparameter tuning via `GridSearchCV`.
+- 🔁 **Multi-model training** with hyperparameter tuning via `Optuna`.
 - 📈 **Experiment tracking and versioning** with MLflow.
 - 🧹 **Step-wise pipeline orchestration** using Metaflow.
 - 📊 Automatic saving of evaluation artifacts like **confusion matrices** and **classification reports**.
@@ -55,7 +55,7 @@ Built using [Metaflow](https://docs.metaflow.org/), the pipeline consists of the
    - Applies feature scaling and splits data into train, validation, and test sets.
 
 3. ### `train_models`
-   - Trains the following models with `GridSearchCV` for hyperparameter tuning:
+   - Trains the following models with `Optuna` for hyperparameter tuning:
      - Random Forest
      - Logistic Regression
      - K-Nearest Neighbors
@@ -84,7 +84,8 @@ Built using [Metaflow](https://docs.metaflow.org/), the pipeline consists of the
 |----------------------|-------------------------------------------------------------------------|
 | **Metaflow**         | Orchestrates the ML pipeline with step-wise execution and visualization |
 | **MLflow**           | Logs model performance, parameters, and artifacts                        |
-| **scikit-learn**     | Core ML library (models + `GridSearchCV`)                                |
+| **scikit-learn**     | Core ML library                                                          |
+| **Optuna**           | Efficient hyperparameter optimization                                    |
 | **matplotlib / seaborn** | Visualizes evaluation metrics like confusion matrices             |
 | **joblib**           | Efficiently saves trained models                                         |
 | **Docker**           | Required for running `metaflow-dev` environment                          |
@@ -227,3 +228,72 @@ All results are printed in the terminal and stored in MLflow.
 
 For questions, feedback, or contributions, feel free to open an issue or contact via GitHub.
 
+---
+
+# CS317: Lab 2 – API, Docker and Deploy API
+
+This project is part of the CS317 course and demonstrates a full machine learning workflow using FastAPI, Docker and Remote Server to create and deploy usable API.
+
+## 🧠 Pipeline Structure
+
+Built using FastAPI, the pipeline consists of these stages:
+
+### ✅ Create API with FastAPI
+```bash
+app = FastAPI()
+uvicorn main:app --host 0.0.0.0 --port 8080
+```
+
+### ✅ Build docker image locally
+```bash
+docker build -t <image_name> .
+docker run -d -p 8080:8080 --name <container_name> <image_name>
+```
+
+### ✅ Docker compose locally
+> Requires `docker-compose.yaml` file
+```bash
+docker compose up --build
+```
+
+### ✅ Testing built APIS
+> Access this URL to use FastAPI Swagger to test the API:
+[http://0.0.0.0:8080/docs](http://0.0.0.0:8080/docs)
+
+### ✅ Deploy API via remote server
+- Access the remote server via SSH
+- Install Docker as guided (for Ubuntu)
+- Clone the GitHub repo to the server
+- Run the service with:
+```bash
+docker compose up --build
+```
+
+### ✅ Access API externally
+> Docker runs locally on the server and can be accessed via:
+```
+http://<SERVER_IP>:8080/docs
+```
+> You must also maintain OpenVPN connection.
+
+---
+
+## 🚰 Technologies
+
+| Tool/Library | Purpose |
+|--------------|---------|
+| **FastAPI** | Modern, high-performance web framework for APIs |
+| **Docker** | Environment-agnostic app packaging and deployment |
+
+---
+
+## ✅ Results
+
+- ✅ Serving API and Docker locally
+- ✅ Serving API and Docker on remote server
+
+---
+
+## 📬 Contact
+
+For questions, feedback, or contributions, feel free to open an issue or contact via GitHub.
