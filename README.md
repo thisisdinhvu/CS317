@@ -31,19 +31,19 @@ This project is part of the **CS317** course and demonstrates a full **machine l
 
 ---
 
-## 🔍 Overview
+##  Overview
 
 We tackle the **diabetes classification** problem by **predicting the risk of diabetes** from medical records using multiple machine learning models. This project showcases:
 
-- 🔁 **Multi-model training** with hyperparameter tuning via `Optuna`.
-- 📈 **Experiment tracking and versioning** with MLflow.
-- 🧹 **Step-wise pipeline orchestration** using Metaflow.
-- 📊 Automatic saving of evaluation artifacts like **confusion matrices** and **classification reports**.
-- 🧱 **Modular design**—easily add new models or metrics.
+-  **Multi-model training** with hyperparameter tuning via `Optuna`.
+-  **Experiment tracking and versioning** with MLflow.
+-  **Step-wise pipeline orchestration** using Metaflow.
+-  Automatic saving of evaluation artifacts like **confusion matrices** and **classification reports**.
+-  **Modular design**—easily add new models or metrics.
 
 ---
 
-## 🧠 Pipeline Structure
+##  Pipeline Structure
 
 Built using [Metaflow](https://docs.metaflow.org/), the pipeline consists of these stages:
 
@@ -92,7 +92,7 @@ Built using [Metaflow](https://docs.metaflow.org/), the pipeline consists of the
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 > **Note**: This project is optimized for **Ubuntu/Linux** systems. If you're using **Windows**, consider using **WSL** or a **virtual machine**.
 
@@ -174,7 +174,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Running the Pipeline
+## ▶ Running the Pipeline
 
 Once your environment is ready, run the pipeline:
 
@@ -234,7 +234,7 @@ For questions, feedback, or contributions, feel free to open an issue or contact
 
 This project is part of the CS317 course and demonstrates a full machine learning workflow using FastAPI, Docker and Remote Server to create and deploy usable API.
 
-## 🧠 Pipeline Structure
+##  Pipeline Structure
 
 Built using FastAPI, the pipeline consists of these stages:
 
@@ -306,6 +306,7 @@ http://<SERVER_IP>:8080/docs
 ## Tutorial:
 
 [Locally](https://www.youtube.com/watch?v=ldGWFFqCT4s&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
+
 [On remote server](https://www.youtube.com/watch?v=pX-mLY8qgQs&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
 ##  Contact
 
