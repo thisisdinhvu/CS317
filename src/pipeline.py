@@ -20,16 +20,16 @@ from sklearn.metrics import (
 
 class DiabetesClassificationFlow(FlowSpec):
 
-    rf_n_estimators = Parameter("rf_n_estimators", default="100,150,200")
-    rf_max_depth = Parameter("rf_max_depth", default="None,10")
-    rf_class_weight = Parameter("rf_class_weight", default="balanced,None")
+    # rf_n_estimators = Parameter("rf_n_estimators", default="100,150,200")
+    # rf_max_depth = Parameter("rf_max_depth", default="None,10")
+    # rf_class_weight = Parameter("rf_class_weight", default="balanced,None")
 
     logreg_c = Parameter("logreg_c", default="0.1,1.0")
 
     knn_neighbors = Parameter("knn_neighbors", default="3,5,7,10")
 
-    dt_max_depth = Parameter("dt_max_depth", default="None,5,10")
-    dt_min_samples_split = Parameter("dt_min_samples_split", default="2, 5")
+    # dt_max_depth = Parameter("dt_max_depth", default="None,5,10")
+    # dt_min_samples_split = Parameter("dt_min_samples_split", default="2, 5")
 
     @step
     def start(self):
@@ -66,14 +66,14 @@ class DiabetesClassificationFlow(FlowSpec):
             return [convert(v) for v in val.split(",")]
 
         self.model_configs = {
-            "RandomForest": {
-                "model": RandomForestClassifier(random_state=42),
-                "params": {
-                    "n_estimators": parse_param(self.rf_n_estimators),
-                    "max_depth": parse_param(self.rf_max_depth),
-                    "class_weight": parse_param(self.rf_class_weight)
-                }
-            },
+            # "RandomForest": {
+            #     "model": RandomForestClassifier(random_state=42),
+            #     "params": {
+            #         "n_estimators": parse_param(self.rf_n_estimators),
+            #         "max_depth": parse_param(self.rf_max_depth),
+            #         "class_weight": parse_param(self.rf_class_weight)
+            #     }
+            # },
             "LogisticRegression": {
                 "model": LogisticRegression(solver="liblinear", random_state=42),
                 "params": {
@@ -85,14 +85,15 @@ class DiabetesClassificationFlow(FlowSpec):
                 "params": {
                     "n_neighbors": parse_param(self.knn_neighbors)
                 }
-            },
-            "DecisionTree": {
-                "model": DecisionTreeClassifier(random_state=42),
-                "params": {
-                    "max_depth": parse_param(self.dt_max_depth),
-                    "min_samples_split": parse_param(self.dt_min_samples_split)
-                }
             }
+            # },
+            # "DecisionTree": {
+            #     "model": DecisionTreeClassifier(random_state=42),
+            #     "params": {
+            #         "max_depth": parse_param(self.dt_max_depth),
+            #         "min_samples_split": parse_param(self.dt_min_samples_split)
+            #     }
+            # }
         }
 
         mlflow.set_experiment("diabetes_classification")
@@ -100,7 +101,7 @@ class DiabetesClassificationFlow(FlowSpec):
         for name, config in self.model_configs.items():
             print(f"Tuning model: {name}")
             grid_search = GridSearchCV(
-                config["model"], config["params"], cv=3, scoring="f1", n_jobs=-1
+                config["model"], config["params"], cv=3, scoring="f1", n_jobs=2
             )
             grid_search.fit(self.X_train, self.y_train)
 
