@@ -199,7 +199,7 @@ Sample output after running:
 
 ---
 
-## 📂 Output Files
+##  Output Files
 
 - Trained models: `saved_models/`
 - Evaluation reports and plots: `results/`
@@ -207,7 +207,7 @@ Sample output after running:
 
 ---
 
-## 📊 Evaluation Metrics
+##  Evaluation Metrics
 
 Each model is assessed with:
 
@@ -224,7 +224,7 @@ All results are printed in the terminal and stored in MLflow.
 ## Tutorial: [For MAC](https://www.youtube.com/watch?v=mCJgK6Eq-nE)
 ---
 
-## 📬 Contact
+##  Contact
 
 For questions, feedback, or contributions, feel free to open an issue or contact via GitHub.
 
@@ -238,29 +238,38 @@ This project is part of the CS317 course and demonstrates a full machine learnin
 
 Built using FastAPI, the pipeline consists of these stages:
 
-### ✅ Create API with FastAPI
+###  Create API with FastAPI
 ```bash
 app = FastAPI()
 uvicorn main:app --host 0.0.0.0 --port 8080
 ```
 
-### ✅ Build docker image locally
+###  Pull Docker Image from Docker Hub
+
+Instead of building the image manually, you can directly pull my pre-built image from Docker Hub:
+
+```bash
+docker pull imisschunyuan/diabetes-api
+docker run -d -p 8080:8080 imisschunyuan/diabetes-api
+```
+
+###  Build docker image locally
 ```bash
 docker build -t <image_name> .
 docker run -d -p 8080:8080 --name <container_name> <image_name>
 ```
 
-### ✅ Docker compose locally
+###  Docker compose locally
 > Requires `docker-compose.yaml` file
 ```bash
 docker compose up --build
 ```
 
-### ✅ Testing built APIS
+###  Testing built APIS
 > Access this URL to use FastAPI Swagger to test the API:
 [http://0.0.0.0:8080/docs](http://0.0.0.0:8080/docs)
 
-### ✅ Deploy API via remote server
+###  Deploy API via remote server
 - Access the remote server via SSH
 - Install Docker as guided (for Ubuntu)
 - Clone the GitHub repo to the server
@@ -269,7 +278,7 @@ docker compose up --build
 docker compose up --build
 ```
 
-### ✅ Access API externally
+###  Access API externally
 > Docker runs locally on the server and can be accessed via:
 ```
 http://<SERVER_IP>:8080/docs
@@ -278,7 +287,7 @@ http://<SERVER_IP>:8080/docs
 
 ---
 
-## 🚰 Technologies
+##  Technologies
 
 | Tool/Library | Purpose |
 |--------------|---------|
@@ -287,13 +296,17 @@ http://<SERVER_IP>:8080/docs
 
 ---
 
-## ✅ Results
+##  Results
 
-- ✅ Serving API and Docker locally
-- ✅ Serving API and Docker on remote server
+-  Serving API and Docker locally
+-  Serving API and Docker on remote server
 
 ---
 
-## 📬 Contact
+## Tutorial:
+
+[Locally](https://www.youtube.com/watch?v=ldGWFFqCT4s&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
+[On remote server](https://www.youtube.com/watch?v=pX-mLY8qgQs&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
+##  Contact
 
 For questions, feedback, or contributions, feel free to open an issue or contact via GitHub.
