@@ -244,7 +244,7 @@ app = FastAPI()
 uvicorn main:app --host 0.0.0.0 --port 8080
 ```
 
-###  Pull Docker Image from Docker Hub
+###  Pull Docker Image from Docker Hub 
 
 Instead of building the image manually, you can directly pull my pre-built image from Docker Hub:
 
@@ -300,7 +300,7 @@ http://<SERVER_IP>:8080/docs
 
 -  Serving API and Docker locally
 -  Serving API and Docker on remote server
-
+-  Push my prebuilt image on Docker Hub (https://hub.docker.com/r/imisschunyuan/diabetes-api)
 ---
 
 ## Tutorial:
