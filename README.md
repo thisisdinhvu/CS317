@@ -105,7 +105,7 @@ cd CS317
 ### 2. Set Up Python Environment
 
 ```bash
-python3 -m venv metaflow_env
+python -m venv metaflow_env
 source metaflow_env/bin/activate
 ```
 
