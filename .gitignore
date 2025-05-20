@@ -11,8 +11,6 @@ metaflow_env/
 
 # Metaflow cache & runs
 .metaflow/
-results/
-saved_models/
 
 # MLflow runs
 mlruns/
