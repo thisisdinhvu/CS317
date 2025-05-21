@@ -311,7 +311,8 @@ http://<SERVER_IP>:8080/docs
 
 [Serving API and Docker on remote server](https://www.youtube.com/watch?v=pX-mLY8qgQs&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
 
--  Lưu ý, phần serving API trên server có sử dụng ngrok với mục đích **thử nghiệm**, giúp tạo 1 public url có thể truy cập từ internet vào local network trên server. Không khuyến khích cung cấp các API quan trọng thông qua ngrok.
+-  Note: The API serving on the server uses **ngrok** for testing purposes, allowing the creation of a public URL that provides internet access to the local network on the server. It is **not recommended** to expose critical APIs through ngrok.
+
 
 ##  Contact
 
