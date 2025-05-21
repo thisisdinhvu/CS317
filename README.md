@@ -238,7 +238,7 @@ This project is part of the CS317 course and demonstrates a full machine learnin
 
 Built using FastAPI, the pipeline consists of these stages:
 
-**Lưu ý** : clone github repo về máy cá nhân.
+Note: Clone the GitHub repository to your personal computer.
 
 ###  Create API with FastAPI
 ```bash
