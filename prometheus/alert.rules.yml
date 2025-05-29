@@ -1,0 +1,20 @@
+groups:
+  - name: api_alerts
+    rules:
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[1m]) / rate(http_requests_total[1m]) > 0.5
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate"
+          description: "Error rate is > 50%"
+
+      - alert: LowConfidence
+        expr: model_mean_confidence_score < 0.6
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low confidence score"
+          description: "Prediction confidence < 0.6"
