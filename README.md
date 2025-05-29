@@ -238,6 +238,8 @@ This project is part of the CS317 course and demonstrates a full machine learnin
 
 Built using FastAPI, the pipeline consists of these stages:
 
+Note: Clone the GitHub repository to your personal computer.
+
 ###  Create API with FastAPI
 ```bash
 app = FastAPI()
@@ -303,11 +305,15 @@ http://<SERVER_IP>:8080/docs
 -  Push my prebuilt image on Docker Hub (https://hub.docker.com/r/imisschunyuan/diabetes-api)
 ---
 
-## Tutorial:
+## Demo:
 
-[Locally](https://www.youtube.com/watch?v=ldGWFFqCT4s&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
+[Serving API and Docker locally](https://www.youtube.com/watch?v=ldGWFFqCT4s&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
 
-[On remote server](https://www.youtube.com/watch?v=pX-mLY8qgQs&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
+[Serving API and Docker on remote server](https://www.youtube.com/watch?v=pX-mLY8qgQs&ab_channel=TrungNg%C3%B4Th%C3%A0nh)
+
+-  Note: The API serving on the server uses **ngrok** for testing purposes, allowing the creation of a public URL that provides internet access to the local network on the server. It is **not recommended** to expose critical APIs through ngrok.
+
+
 ##  Contact
 
 For questions, feedback, or contributions, feel free to open an issue or contact via GitHub.
