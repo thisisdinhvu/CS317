@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException, Request
 import pandas as pd
 import joblib
 import time
@@ -6,6 +6,11 @@ import logging
 from sklearn.metrics import accuracy_score, f1_score
 from prometheus_fastapi_instrumentator import Instrumentator
 from prometheus_client import Gauge
+import os
+import json
+
+# Đảm bảo thư mục logging tồn tại
+os.makedirs("../logging", exist_ok=True)
 
 # =======================
 # Logging Configuration
@@ -14,10 +19,11 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler("logging/api.log"),   # File log
+        logging.FileHandler("../logging/api.log"),   # File log
         logging.StreamHandler()                   # stdout/stderr
     ]
 )
+print(logging.getLogger().handlers)  # Xem các handler hiện tại
 
 # =======================
 # Prometheus Custom Metrics
@@ -26,6 +32,8 @@ INFERENCE_TIME = Gauge("model_inference_time_seconds", "Time spent on model infe
 F1_SCORE = Gauge("model_f1_score", "F1 score of prediction")
 ACCURACY = Gauge("model_accuracy", "Accuracy of prediction")
 CONFIDENCE_SCORE = Gauge("model_mean_confidence_score", "Mean confidence score of prediction")
+
+# logging.basicConfig(filename='logs/diabetes.log', level=logging.INFO)
 
 # =======================
 # FastAPI App Init
@@ -48,6 +56,12 @@ FEATURE_COLS = [
     "MentHlth", "PhysHlth", "DiffWalk", "Sex", "Age", "Education", "Income"
 ]
 TARGET_COL = "Diabetes_binary"
+
+@app.post("/alert")
+async def receive_alert(request: Request):
+    payload = await request.json()
+    logging.info("Received alert:\n%s", json.dumps(payload, indent=2))
+    return {"status": "received"}
 
 # =======================
 # Evaluation Endpoint
