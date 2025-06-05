@@ -375,7 +375,7 @@ docker compose up --build
 
 | Service              | URL                                                      |
 | -------------------- | -------------------------------------------------------- |
-| FastAPI              | [http://localhost:8080/docs](http://localhost:8080/docs) |
+| FastAPI              | [http://localhost:8000/docs](http://localhost:8000/docs) |
 | Prometheus           | [http://localhost:9090](http://localhost:9090)           |
 | Grafana              | [http://localhost:3000](http://localhost:3000)           |
 | Fluentd Logs (local) | `docker/fluentd/log/` folder                             |
@@ -446,7 +446,7 @@ Alerts can be sent to:
 After deployment, use the following tools:
 
 ```bash
-curl -X POST http://localhost:8080/predict -H "Content-Type: application/json" \
+curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" \
      -d '{"age": 35, "glucose": 180, "bmi": 33, "blood_pressure": 85}'
 ```
 
