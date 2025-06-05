@@ -320,10 +320,6 @@ For questions, feedback, or contributions, feel free to open an issue or contact
 
 ---
 
-Dưới đây là nội dung README tiếp tục cho **Lab 3** trong dự án CS317, theo đúng yêu cầu bạn nêu:
-
----
-
 # CS317: Lab 3 – Monitoring & Logging for Machine Learning API
 
 This lab extends the API developed in **Lab 2** by integrating **monitoring** and **logging services** to observe system performance, track model metrics, and capture logs from multiple sources for debugging and auditing.
