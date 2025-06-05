@@ -33,7 +33,6 @@ F1_SCORE = Gauge("model_f1_score", "F1 score of prediction")
 ACCURACY = Gauge("model_accuracy", "Accuracy of prediction")
 CONFIDENCE_SCORE = Gauge("model_mean_confidence_score", "Mean confidence score of prediction")
 
-# logging.basicConfig(filename='logs/diabetes.log', level=logging.INFO)
 
 # =======================
 # FastAPI App Init
