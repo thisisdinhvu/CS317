@@ -413,7 +413,7 @@ docker compose up --build
 
 ---
 
-## 📈 Grafana Dashboards
+## Grafana Dashboards
 
 > Dashboards available in `docker/grafana/dashboards/` or imported via UI
 
@@ -425,7 +425,7 @@ docker compose up --build
 
 ---
 
-## 🚨 Optional: Alerting with Alertmanager
+## Alerting with Alertmanager
 
 > For bonus/advanced setup:
 
@@ -468,11 +468,8 @@ curl -X POST http://localhost:8080/predict -H "Content-Type: application/json" \
 
 ---
 
----
-
 ## Contact
 
 Feel free to open an issue or email for bugs or feature requests.
 
 ---
-
