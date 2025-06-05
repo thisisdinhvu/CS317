@@ -23,7 +23,7 @@ logging.basicConfig(
         logging.StreamHandler()                   # stdout/stderr
     ]
 )
-print(logging.getLogger().handlers)  # Xem các handler hiện tại
+# print(logging.getLogger().handlers)  # Xem các handler hiện tại
 
 # =======================
 # Prometheus Custom Metrics
