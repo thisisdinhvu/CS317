@@ -320,4 +320,159 @@ For questions, feedback, or contributions, feel free to open an issue or contact
 
 ---
 
-# CS317: Lab 3 – ...
+Dưới đây là nội dung README tiếp tục cho **Lab 3** trong dự án CS317, theo đúng yêu cầu bạn nêu:
+
+---
+
+# CS317: Lab 3 – Monitoring & Logging for Machine Learning API
+
+This lab extends the API developed in **Lab 2** by integrating **monitoring** and **logging services** to observe system performance, track model metrics, and capture logs from multiple sources for debugging and auditing.
+
+---
+
+##  Objectives
+
+* Monitor **server-level metrics**: CPU, RAM, Disk, Network I/O (and optional GPU).
+* Monitor **API performance**: requests/sec, latency, error rate.
+* Monitor **model inference**: response time (CPU/GPU), confidence scores.
+* Capture logs from:
+
+  * System logs (`syslog`)
+  * Application logs (`stdout`, `stderr`)
+  * Custom log files (`logfile.log`)
+* Setup **alerts** (optional) and centralized logging via Fluentd, Prometheus, Grafana.
+
+---
+
+##  Technologies
+
+| Tool/Service         | Purpose                                 |
+| -------------------- | --------------------------------------- |
+| **FastAPI**          | API framework                           |
+| **Docker**           | Containerization                        |
+| **Prometheus**       | Metrics collection                      |
+| **Grafana**          | Monitoring dashboards                   |
+| **Fluentd**          | Centralized log collector               |
+| **node\_exporter**   | Server resource exporter for Prometheus |
+| **uvicorn/gunicorn** | ASGI server for running FastAPI         |
+| **psutil**           | Python system metrics (used in API)     |
+| **loguru**           | Structured Python logging               |
+
+---
+
+##  Setup and Run
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/your-username/CS317
+cd CS317
+```
+
+### 2. Launch Full Monitoring Stack
+
+```bash
+docker compose up --build
+```
+
+### 3. Access Services
+
+| Service              | URL                                                      |
+| -------------------- | -------------------------------------------------------- |
+| FastAPI              | [http://localhost:8080/docs](http://localhost:8080/docs) |
+| Prometheus           | [http://localhost:9090](http://localhost:9090)           |
+| Grafana              | [http://localhost:3000](http://localhost:3000)           |
+| Fluentd Logs (local) | `docker/fluentd/log/` folder                             |
+
+> **Default Grafana login**:
+> Username: `admin`
+> Password: `admin`
+
+---
+
+## Metrics Monitored
+
+### Server Resources (via `node_exporter`)
+
+* CPU Usage
+* Memory (RAM) Usage
+* Disk Usage & I/O
+* Network I/O (tx/rx)
+* 
+### API Performance (via Prometheus + FastAPI Middleware)
+
+* Requests per second
+* Average Latency
+* HTTP Error Rate
+
+### Model Metrics (via custom Prometheus exporter)
+
+* Inference latency (CPU/GPU)
+* Confidence score (mean, min, max)
+* Input batch size
+
+---
+
+## 📈 Grafana Dashboards
+
+> Dashboards available in `docker/grafana/dashboards/` or imported via UI
+
+**Sample Dashboards:**
+
+* **System Overview**: CPU, RAM, Disk, Network
+* **API Performance**: Latency, RPS, Error Rate
+* **Model Monitoring**: Inference time, confidence trends
+
+---
+
+## 🚨 Optional: Alerting with Alertmanager
+
+> For bonus/advanced setup:
+
+* Configure `Alertmanager` to trigger alerts on:
+
+  * High CPU usage
+  * Low confidence scores
+  * > 50% error rate
+  * High latency or inference time
+
+Alerts can be sent to:
+
+* **Email**
+* **Slack**
+* **Telegram**
+* **Webhook** (for auto model retrain)
+
+---
+
+##  Testing & Validation
+
+After deployment, use the following tools:
+
+```bash
+curl -X POST http://localhost:8080/predict -H "Content-Type: application/json" \
+     -d '{"age": 35, "glucose": 180, "bmi": 33, "blood_pressure": 85}'
+```
+
+* Check Prometheus `/metrics`
+* Check FastAPI Swagger UI: [http://localhost:8080/docs](http://localhost:8080/docs)
+* Check logs in `docker/fluentd/log/`
+* View dashboards in Grafana
+
+---
+
+## Demo
+
+* [Monitoring System and API with Grafana + Prometheus](https://youtu.be/YOUR_VIDEO_LINK)
+* [Centralized Logging with Fluentd](https://youtu.be/YOUR_VIDEO_LINK)
+
+---
+
+---
+
+## Contact
+
+Feel free to open an issue or email for bugs or feature requests.
+
+---
+
