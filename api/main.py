@@ -5,12 +5,13 @@ import time
 import logging
 from sklearn.metrics import accuracy_score, f1_score
 from prometheus_fastapi_instrumentator import Instrumentator
-from prometheus_client import Gauge
+from prometheus_client import Gauge, Counter
 import os
 import json
 
 # Đảm bảo thư mục logging tồn tại
-os.makedirs("../logging", exist_ok=True)
+LOG_DIR = os.environ.get("LOG_DIR", "/logging")
+os.makedirs(LOG_DIR, exist_ok=True)
 
 # =======================
 # Logging Configuration
@@ -19,7 +20,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler("../logging/api.log"),   # File log
+        logging.FileHandler(f"{LOG_DIR}/api.log"),   # File log
         logging.StreamHandler()                   # stdout/stderr
     ]
 )
@@ -56,10 +57,27 @@ FEATURE_COLS = [
 ]
 TARGET_COL = "Diabetes_binary"
 
+ALERT_COUNT = Counter("received_alerts_total", "Number of alerts received")
+
+
 @app.post("/alert")
 async def receive_alert(request: Request):
-    payload = await request.json()
-    logging.info("Received alert:\n%s", json.dumps(payload, indent=2))
+    try:
+        payload = await request.json()
+    except Exception as e:
+        logging.exception("Failed to parse JSON payload from /alert")
+        raise HTTPException(status_code=400, detail="Invalid JSON payload")
+
+    ALERT_COUNT.inc()
+
+    for alert in payload.get("alerts", []):
+        logging.warning(
+            f"ALERT: {alert.get('labels', {}).get('alertname')} | "
+            f"Severity: {alert.get('labels', {}).get('severity')} | "
+            f"Instance: {alert.get('labels', {}).get('instance')} | "
+            f"Description: {alert.get('annotations', {}).get('description')}"
+        )
+
     return {"status": "received"}
 
 # =======================

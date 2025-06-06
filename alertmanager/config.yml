@@ -2,17 +2,20 @@ global:
   smtp_smarthost: 'smtp.gmail.com:587'
   smtp_from: 'your_email@gmail.com'
   smtp_auth_username: 'your_email@gmail.com'
-  smtp_auth_password: 'your_app_password'  # Gmail app password (not account password!)
+  smtp_auth_password: 'your_app_password'
   smtp_require_tls: true
 
 route:
-  receiver: email-notifications
+  receiver: 'multi-route'
   group_wait: 30s
   group_interval: 5m
   repeat_interval: 3h
 
 receivers:
-  - name: email-notifications
+  - name: multi-route
     email_configs:
       - to: 'recipient@example.com'
+        send_resolved: true
+    webhook_configs:
+      - url: 'http://diabetes-api:8000/alert'
         send_resolved: true

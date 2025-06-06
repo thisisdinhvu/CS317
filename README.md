@@ -429,7 +429,7 @@ docker compose up --build
 
   * High CPU usage
   * Low confidence scores
-  * > 50% error rate
+  * More than 50% error rate
   * High latency or inference time
 
 Alerts can be sent to:
@@ -448,12 +448,15 @@ After deployment, use the following tools:
 curl.exe -X POST http://127.0.0.1:8000/evaluate `
   -H "accept: application/json" `
   -H "Content-Type: multipart/form-data" `
-  -F "file=@dataset/sample.csv"
+  -F "file=@test/sample.csv"
 ```
 
 * Check Prometheus `/metrics`
 * Check FastAPI Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
-* Check logs in `docker/fluentd/log/`
+* Check logs by:
+```bash
+docker compose logs fluentd
+```
 * View dashboards in Grafana
 
 ---

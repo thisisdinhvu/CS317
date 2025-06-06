@@ -11,10 +11,12 @@ services:
     depends_on:
       - prometheus
       - fluentd
-    command: >
-      sh -c "sleep 10 && uvicorn main:app --host 0.0.0.0 --port 8000"
+    # command: >
+    #   sh -c "sleep 10 && uvicorn main:app --host 0.0.0.0 --port 8000"
     volumes:
-      - ../logging:/logging
+      - ./logging:/logging
+    logging:
+      driver: "json-file"
 
   prometheus:
     image: prom/prometheus
@@ -32,7 +34,7 @@ services:
     image: prom/alertmanager
     container_name: cs317-alertmanager
     volumes:
-      - ./alerts/config.yml:/etc/alertmanager/config.yml  
+      - ./alertmanager/config.yml:/etc/alertmanager/config.yml  
     command:
       - "--config.file=/etc/alertmanager/config.yml"
     ports:
@@ -63,7 +65,7 @@ services:
     container_name: cs317-fluentd
     volumes:
       - ./logging/fluentd.conf:/fluentd/etc/fluent.conf
-      - ../logging:/fluentd/log  
+      - ./logging:/fluentd/log  
     ports:
       - "24224:24224"
       - "24224:24224/udp"

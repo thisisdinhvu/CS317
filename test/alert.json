@@ -1,0 +1,15 @@
+{
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "HighCPUUsage",
+        "severity": "critical",
+        "instance": "server-1"
+      },
+      "annotations": {
+        "description": "CPU usage above 90% for 5 minutes"
+      }
+    }
+  ]
+}
