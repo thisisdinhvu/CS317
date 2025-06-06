@@ -394,7 +394,7 @@ docker compose up --build
 * Memory (RAM) Usage
 * Disk Usage & I/O
 * Network I/O (tx/rx)
-* 
+  
 ### API Performance (via Prometheus + FastAPI Middleware)
 
 * Requests per second
