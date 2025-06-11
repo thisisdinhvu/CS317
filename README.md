@@ -320,52 +320,50 @@ For questions, feedback, or contributions, feel free to open an issue or contact
 
 ---
 
+
 # CS317: Lab 3 – Monitoring & Logging for Machine Learning API
 
-This lab extends the API developed in **Lab 2** by integrating **monitoring** and **logging services** to observe system performance, track model metrics, and capture logs from multiple sources for debugging and auditing.
+This lab extends the API developed in **Lab 2** by integrating **monitoring** and **centralized logging** to observe system performance, track model metrics, and capture logs from multiple sources using **Prometheus**, **Grafana**, **Loki**, and **Promtail**.
 
 ---
 
-##  Objectives
+## Objectives
 
-* Monitor **server-level metrics**: CPU, RAM, Disk, Network I/O (and optional GPU).
-* Monitor **API performance**: requests/sec, latency, error rate.
-* Monitor **model inference**: response time (CPU/GPU), confidence scores.
-* Capture logs from:
-
-  * System logs (`syslog`)
-  * Application logs (`stdout`, `stderr`)
-  * Custom log files (`logfile.log`)
-* Setup **alerts** (optional) and centralized logging via Fluentd, Prometheus, Grafana.
+- Monitor **server-level metrics**: CPU, RAM, Disk, Network I/O.
+- Track **API performance**: request rate, latency, error rate.
+- Visualize **model metrics**: inference latency, confidence scores.
+- Collect **logs** from:
+  - `stdout` / `stderr`
+  - Custom log files (e.g., `api.log`)
+- Visualize logs in **Grafana** via **Loki**.
 
 ---
 
-##  Technologies
+## Technologies
 
 | Tool/Service         | Purpose                                 |
 | -------------------- | --------------------------------------- |
 | **FastAPI**          | API framework                           |
-| **Docker**           | Containerization                        |
-| **Prometheus**       | Metrics collection                      |
-| **Grafana**          | Monitoring dashboards                   |
-| **Fluentd**          | Centralized log collector               |
-| **node\_exporter**   | Server resource exporter for Prometheus |
-| **uvicorn/gunicorn** | ASGI server for running FastAPI         |
-| **psutil**           | Python system metrics (used in API)     |
-| **loguru**           | Structured Python logging               |
+| **Docker Compose**   | Multi-service container orchestration   |
+| **Prometheus**       | Metrics scraping                        |
+| **Grafana**          | Dashboards for metrics + logs           |
+| **Loki**             | Log aggregation backend                 |
+| **Promtail**         | Agent for shipping logs to Loki         |
+| **node_exporter**    | Server-level metrics exporter           |
+| **loguru**           | Logging utility for Python              |
 
 ---
 
-##  Setup and Run
+## Setup
 
-### 1. Clone the Repo
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/CS317
 cd CS317
 ```
 
-### 2. Launch Full Monitoring Stack
+### 2. Start the Full Monitoring Stack
 
 ```bash
 docker compose up --build
@@ -373,76 +371,79 @@ docker compose up --build
 
 ### 3. Access Services
 
-| Service              | URL                                                      |
-| -------------------- | -------------------------------------------------------- |
-| FastAPI              | [http://localhost:8000/docs](http://localhost:8000/docs) |
-| Prometheus           | [http://localhost:9090](http://localhost:9090)           |
-| Grafana              | [http://localhost:3000](http://localhost:3000)           |
-| Fluentd Logs (local) | `docker/fluentd/log/` folder                             |
+| Service      | URL                              |
+| ------------ | -------------------------------- |
+| FastAPI      | http://localhost:8000/docs       |
+| Prometheus   | http://localhost:9090            |
+| Grafana      | http://localhost:3000            |
+| Loki API     | http://localhost:3100            |
 
-> **Default Grafana login**:
-> Username: `admin`
+> **Grafana Default Login:**  
+> Username: `admin`  
 > Password: `admin`
 
 ---
 
-## Metrics Monitored
+## Monitored Metrics
 
-### Server Resources (via `node_exporter`)
+### Server Metrics (via `node_exporter`)
 
-* CPU Usage
-* Memory (RAM) Usage
-* Disk Usage & I/O
-* Network I/O (tx/rx)
-  
-### API Performance (via Prometheus + FastAPI Middleware)
+- CPU usage (%)
+- RAM usage (MB/GB)
+- Disk I/O
+- Network I/O
 
-* Requests per second
-* Average Latency
-* HTTP Error Rate
+### API Metrics (via FastAPI + Prometheus)
 
-### Model Metrics (via custom Prometheus exporter)
+- Requests/sec
+- HTTP latency
+- 5xx error rate
 
-* Inference latency (CPU/GPU)
-* Confidence score (mean, min, max)
-* Input batch size
+### Model Metrics (custom Prometheus exporter)
+
+- Inference time (seconds)
+- Confidence scores (mean)
+- F1-score, accuracy
 
 ---
 
 ## Grafana Dashboards
 
-> Dashboards available in `docker/grafana/dashboards/` or imported via UI
+Dashboards are auto-loaded from:
 
-**Sample Dashboards:**
+```text
+grafana/dashboards/
+```
 
-* **System Overview**: CPU, RAM, Disk, Network
-* **API Performance**: Latency, RPS, Error Rate
-* **Model Monitoring**: Inference time, confidence trends
+### Included Dashboards:
+
+- System Overview: CPU, Memory, Disk
+- API Performance: Latency, Throughput
+- Model Monitoring: Inference Time, Confidence
+- Logs Dashboard (via Loki)
 
 ---
 
 ## Alerting with Alertmanager
 
-> For bonus/advanced setup:
+> Optional advanced config
 
-* Configure `Alertmanager` to trigger alerts on:
+**Alert rules include:**
+- Error rate > 50%
+- Confidence score < 0.6
+- High inference latency
+- CPU usage > 90%
 
-  * High CPU usage
-  * Low confidence scores
-  * More than 50% error rate
-  * High latency or inference time
-
-Alerts can be sent to:
-
-* **Email**
-* **Telegram**
-* **Webhook** (for auto model retrain)
+**Alert delivery options:**
+- 📧 Email
+- 🛠 Webhook (e.g. retrigger training)
+- 💬 Telegram / Slack (optional)
 
 ---
 
-##  Testing & Validation
+## Testing & Validation
 
-After deployment, use the following tools:
+Send test request:
 
 ```bash
 curl.exe -X POST http://127.0.0.1:8000/evaluate `
@@ -451,25 +452,35 @@ curl.exe -X POST http://127.0.0.1:8000/evaluate `
   -F "file=@test/sample.csv"
 ```
 
-* Check Prometheus `/metrics`
-* Check FastAPI Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
-* Check logs by:
-```bash
-docker compose logs fluentd
+### Then verify:
+
+- **Metrics**: http://localhost:9090 (Prometheus)
+- **Dashboards & Logs**: http://localhost:3000 (Grafana)
+
+---
+
+## Logs: Promtail + Loki
+
+Promtail is configured to:
+
+- Tail `./logging/api.log` (generated by FastAPI / loguru)
+- Send logs to **Loki**
+- Logs are searchable and visualized in **Grafana**
+
+Example query in Grafana:
+
+```logql
+{job="diabetes-api"}
 ```
-* View dashboards in Grafana
 
 ---
 
 ## Demo
 
-* [Monitoring System and API with Grafana + Prometheus](https://youtu.be/YOUR_VIDEO_LINK)
-* [Centralized Logging with Fluentd](https://youtu.be/YOUR_VIDEO_LINK)
+- Monitoring API Performance (Grafana + Prometheus)
+- Centralized Logging with Loki + Promtail
+
+*(Add YouTube links if applicable)*
 
 ---
 
-## Contact
-
-Feel free to open an issue or email for bugs or feature requests.
-
----
