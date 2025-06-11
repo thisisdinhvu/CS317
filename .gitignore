@@ -19,3 +19,5 @@ mlruns/
 Thumbs.db
 
 logging/api.log
+
+loki/data

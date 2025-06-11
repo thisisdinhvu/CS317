@@ -1,0 +1,540 @@
+2025-06-11 13:51:40,560 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 14:15:33,538 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 14:18:43,059 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 14:22:57,688 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 14:25:14,340 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 14:26:55,169 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.092s, confidence=0.8333333333333333
+2025-06-11 14:30:39,100 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 3 (char 5)
+2025-06-11 14:32:12,420 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: localhost:8000 | Description: Prediction confidence < 0.6
+2025-06-11 14:33:17,341 [WARNING] ALERT: HighCPUUsage | Severity: critical | Instance: server-1 | Description: CPU usage above 90% for 5 minutes
+2025-06-11 14:39:11,773 [WARNING] ALERT: HighCPUUsage | Severity: critical | Instance: server-1 | Description: CPU usage above 90% for 5 minutes
+2025-06-11 14:39:34,360 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2025-06-11 14:40:27,445 [WARNING] ALERT: TestEmailAlert | Severity: warning | Instance: localhost:8000 | Description: This alert should trigger an email
+2025-06-11 14:46:48,055 [INFO] sample_low_conf.csv evaluated | acc=0.4000, f1=0.5714, latency=0.015s, confidence=0.7333333333333333
+2025-06-11 14:48:50,301 [INFO] sample_low_conf_v2.csv evaluated | acc=0.4000, f1=0.5714, latency=0.008s, confidence=0.8666666666666666
+2025-06-11 14:49:04,015 [INFO] sample_low_conf_v2.csv evaluated | acc=0.0000, f1=0.0000, latency=0.006s, confidence=0.8666666666666666
+2025-06-11 14:49:24,648 [INFO] sample_low_conf_v2.csv evaluated | acc=0.4000, f1=0.5714, latency=0.010s, confidence=0.8666666666666666
+2025-06-11 14:49:49,755 [INFO] sample_low_conf_v2.csv evaluated | acc=0.4000, f1=0.5714, latency=0.007s, confidence=0.8666666666666666
+2025-06-11 14:50:09,164 [INFO] sample_low_conf_v2.csv evaluated | acc=0.4000, f1=0.5714, latency=0.009s, confidence=0.8666666666666666
+2025-06-11 14:51:07,301 [INFO] sample_low_conf.csv evaluated | acc=0.2525, f1=0.4032, latency=0.029s, confidence=0.7912457912457913
+2025-06-11 14:51:30,591 [INFO] sample_low_conf.csv evaluated | acc=0.2245, f1=0.3667, latency=0.016s, confidence=0.7959183673469387
+2025-06-11 14:51:50,587 [INFO] sample_low_conf.csv evaluated | acc=0.2207, f1=0.3616, latency=0.073s, confidence=0.7848383500557414
+2025-06-11 14:52:29,499 [INFO] sample_low_conf.csv evaluated | acc=0.1326, f1=0.2337, latency=0.776s, confidence=0.7817447667622993
+2025-06-11 14:54:07,723 [ERROR] Error evaluating sample_low_conf.csv: Input X contains NaN.
+KNeighborsClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+Traceback (most recent call last):
+  File "/app/main.py", line 98, in evaluate
+    y_pred = model.predict(X)
+             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/neighbors/_classification.py", line 262, in predict
+    probabilities = self.predict_proba(X)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/neighbors/_classification.py", line 371, in predict_proba
+    neigh_ind = self.kneighbors(X, return_distance=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/neighbors/_base.py", line 838, in kneighbors
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1107, in check_array
+    _assert_all_finite(
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+KNeighborsClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-06-11 14:54:15,811 [ERROR] Error evaluating sample_low_conf.csv: Input X contains NaN.
+KNeighborsClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+Traceback (most recent call last):
+  File "/app/main.py", line 98, in evaluate
+    y_pred = model.predict(X)
+             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/neighbors/_classification.py", line 262, in predict
+    probabilities = self.predict_proba(X)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/neighbors/_classification.py", line 371, in predict_proba
+    neigh_ind = self.kneighbors(X, return_distance=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/neighbors/_base.py", line 838, in kneighbors
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1107, in check_array
+    _assert_all_finite(
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+KNeighborsClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-06-11 15:01:01,330 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:01:02,257 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:01:02,662 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:01:02,825 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:01:02,982 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:01:03,117 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:01:03,254 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:01:03,410 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:01:39,412 [ERROR] Error evaluating lowconfidence.json: Error tokenizing data. C error: Expected 1 fields in line 5, saw 2
+Traceback (most recent call last):
+  File "/app/main.py", line 90, in evaluate
+    df = pd.read_csv(file.file)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 5, saw 2
+
+2025-06-11 15:01:44,976 [INFO] sample_low_conf.csv evaluated | acc=0.4000, f1=0.5714, latency=0.069s, confidence=0.7333333333333333
+2025-06-11 15:02:17,542 [WARNING] ALERT: HighCPUUsage | Severity: critical | Instance: server-1 | Description: CPU usage above 90% for 5 minutes
+2025-06-11 15:02:55,089 [WARNING] ALERT: HighCPUUsage | Severity: critical | Instance: localhost:8000 | Description: CPU usage above 90% for 5 minutes
+2025-06-11 15:02:57,494 [WARNING] ALERT: TestEmailAlert | Severity: warning | Instance: None | Description: This alert should trigger email
+2025-06-11 15:03:03,627 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:03:04,779 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:03:05,226 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:03:05,408 [ERROR] Failed to parse JSON payload from /alert
+Traceback (most recent call last):
+  File "/app/main.py", line 66, in receive_alert
+    payload = await request.json()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/starlette/requests.py", line 249, in json
+    self._json = json.loads(body)
+                 ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-11 15:05:41,600 [INFO] sample_low_conf.csv evaluated | acc=0.4000, f1=0.5714, latency=0.008s, confidence=0.7333333333333332
+2025-06-11 15:07:42,287 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.082s, confidence=0.0
+2025-06-11 15:08:14,824 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.073s, confidence=0.0
+2025-06-11 15:08:15,876 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.062s, confidence=0.0
+2025-06-11 15:13:19,916 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.071s, confidence=0.0
+2025-06-11 15:13:21,903 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.065s, confidence=0.0
+2025-06-11 15:13:22,510 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.081s, confidence=0.0
+2025-06-11 15:13:22,948 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.068s, confidence=0.0
+2025-06-11 15:13:23,521 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.070s, confidence=0.0
+2025-06-11 15:13:24,061 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.081s, confidence=0.0
+2025-06-11 15:13:24,566 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.098s, confidence=0.0
+2025-06-11 15:13:25,113 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.099s, confidence=0.0
+2025-06-11 15:13:25,570 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.068s, confidence=0.0
+2025-06-11 15:13:26,170 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.089s, confidence=0.0
+2025-06-11 15:13:26,653 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.075s, confidence=0.0
+2025-06-11 15:13:27,134 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.072s, confidence=0.0
+2025-06-11 15:13:27,659 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.067s, confidence=0.0
+2025-06-11 15:13:28,172 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.066s, confidence=0.0
+2025-06-11 15:13:28,672 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.076s, confidence=0.0
+2025-06-11 15:13:29,185 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.062s, confidence=0.0
+2025-06-11 15:13:29,653 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.064s, confidence=0.0
+2025-06-11 15:13:30,125 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.067s, confidence=0.0
+2025-06-11 15:13:30,579 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.062s, confidence=0.0
+2025-06-11 15:13:31,072 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.069s, confidence=0.0
+2025-06-11 15:13:31,507 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.068s, confidence=0.0
+2025-06-11 15:13:31,924 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.066s, confidence=0.0
+2025-06-11 15:13:32,310 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.064s, confidence=0.0
+2025-06-11 15:13:32,683 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.065s, confidence=0.0
+2025-06-11 15:13:33,110 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.076s, confidence=0.0
+2025-06-11 15:13:33,453 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.065s, confidence=0.0
+2025-06-11 15:13:33,775 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.063s, confidence=0.0
+2025-06-11 15:13:34,094 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.064s, confidence=0.0
+2025-06-11 15:13:34,359 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.067s, confidence=0.0
+2025-06-11 15:13:38,990 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.076s, confidence=0.0
+2025-06-11 15:14:48,982 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 15:14:48,983 [WARNING] ALERT: TestEmailAlert | Severity: warning | Instance: None | Description: This alert should trigger email
+2025-06-11 15:15:04,491 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.065s, confidence=0.0
+2025-06-11 15:15:05,600 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.065s, confidence=0.0
+2025-06-11 15:15:06,047 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.066s, confidence=0.0
+2025-06-11 15:15:06,478 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.067s, confidence=0.0
+2025-06-11 15:15:06,773 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.064s, confidence=0.0
+2025-06-11 15:15:41,705 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.069s, confidence=0.0
+2025-06-11 15:22:21,780 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.093s, confidence=0.8333333333333333
+2025-06-11 15:22:22,853 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.012s, confidence=0.8333333333333333
+2025-06-11 15:22:23,018 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:23,163 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.008s, confidence=0.8333333333333333
+2025-06-11 15:22:23,294 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:23,436 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:23,567 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:23,718 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:23,851 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.008s, confidence=0.8333333333333333
+2025-06-11 15:22:23,995 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:24,136 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:23,842 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:23,543 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:23,672 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:23,816 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:23,962 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.008s, confidence=0.8333333333333333
+2025-06-11 15:22:24,131 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:24,217 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:24,405 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.009s, confidence=0.8333333333333333
+2025-06-11 15:22:24,553 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.009s, confidence=0.8333333333333333
+2025-06-11 15:22:24,705 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:24,843 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.009s, confidence=0.8333333333333333
+2025-06-11 15:22:24,994 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:25,135 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:25,272 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.008s, confidence=0.8333333333333333
+2025-06-11 15:22:25,425 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:25,564 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:25,706 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:25,862 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.008s, confidence=0.8333333333333333
+2025-06-11 15:22:26,017 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:26,153 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:26,303 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:26,455 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.010s, confidence=0.8333333333333333
+2025-06-11 15:22:26,585 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 15:22:26,709 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.012s, confidence=0.8333333333333333
+2025-06-11 15:39:30,877 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 15:50:31,738 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 16:44:31,579 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 16:58:30,670 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 17:06:31,057 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 17:34:31,550 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 17:38:31,550 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 17:48:32,527 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 17:53:30,519 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 17:57:31,497 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 18:02:23,002 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.381s, confidence=0.0
+2025-06-11 18:02:25,096 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.182s, confidence=0.0
+2025-06-11 18:02:25,656 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.109s, confidence=0.0
+2025-06-11 18:02:26,229 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.096s, confidence=0.0
+2025-06-11 18:02:26,699 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.100s, confidence=0.0
+2025-06-11 18:02:27,183 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.112s, confidence=0.0
+2025-06-11 18:02:27,720 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.116s, confidence=0.0
+2025-06-11 18:02:28,169 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.131s, confidence=0.0
+2025-06-11 18:02:28,601 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.113s, confidence=0.0
+2025-06-11 18:02:29,106 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.103s, confidence=0.0
+2025-06-11 18:02:29,501 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.099s, confidence=0.0
+2025-06-11 18:02:29,787 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.096s, confidence=0.0
+2025-06-11 18:02:30,060 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.083s, confidence=0.0
+2025-06-11 18:02:30,329 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.079s, confidence=0.0
+2025-06-11 18:02:30,640 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.091s, confidence=0.0
+2025-06-11 18:02:30,992 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.099s, confidence=0.0
+2025-06-11 18:02:31,327 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.125s, confidence=0.0
+2025-06-11 18:02:59,534 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 18:07:18,454 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.164s, confidence=0.0
+2025-06-11 18:20:31,463 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 18:30:59,766 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 18:37:32,456 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 18:56:57,543 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.147s, confidence=0.0
+2025-06-11 18:56:58,520 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.087s, confidence=0.0
+2025-06-11 18:56:59,104 [INFO] sample_low_conf.csv evaluated | acc=0.5000, f1=0.0000, latency=0.090s, confidence=0.0
+2025-06-11 18:57:07,445 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.113s, confidence=0.8333333333333333
+2025-06-11 18:57:07,692 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.014s, confidence=0.8333333333333333
+2025-06-11 18:57:07,871 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.012s, confidence=0.8333333333333333
+2025-06-11 18:57:08,056 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.012s, confidence=0.8333333333333333
+2025-06-11 18:57:08,270 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.012s, confidence=0.8333333333333333
+2025-06-11 18:57:08,514 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.011s, confidence=0.8333333333333333
+2025-06-11 19:01:40,885 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 19:09:33,726 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.014s, confidence=0.8333333333333333

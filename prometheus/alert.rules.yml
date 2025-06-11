@@ -12,9 +12,21 @@ groups:
 
       - alert: LowConfidence
         expr: model_mean_confidence_score < 0.6
-        for: 1m
+        for: 0s
         labels:
           severity: warning
         annotations:
           summary: "Low confidence score"
           description: "Prediction confidence < 0.6"
+  
+  # - name: manual_test_alerts
+  #   rules:
+  #     - alert: TestEmailAlert
+  #       expr: vector(1)
+  #       for: 5s
+  #       labels:
+  #         severity: warning
+  #       annotations:
+  #         summary: "Manual email alert test"
+  #         description: "This alert should trigger email"
+

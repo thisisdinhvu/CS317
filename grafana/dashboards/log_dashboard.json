@@ -1,0 +1,27 @@
+{
+  "title": "Diabetes API Logs",
+  "panels": [
+    {
+      "type": "logs",
+      "title": "Log Stream",
+      "gridPos": { "x": 0, "y": 0, "w": 24, "h": 10 },
+      "targets": [
+        {
+          "expr": "{job=\"diabetes-api\"}",
+          "refId": "A",
+          "datasource": { "type": "loki", "uid": "loki" }
+        }
+      ],
+      "options": {
+        "showTime": true,
+        "wrapLogMessage": true,
+        "dedupStrategy": "none"
+      }
+    }
+  ],
+  "schemaVersion": 36,
+  "version": 1,
+    "tags": [
+    "log"
+  ]
+}

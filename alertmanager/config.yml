@@ -1,12 +1,12 @@
 global:
   smtp_smarthost: 'smtp.gmail.com:587'
-  smtp_from: 'your_email@gmail.com'
-  smtp_auth_username: 'your_email@gmail.com'
-  smtp_auth_password: 'your_app_password'
+  smtp_from: 'thisisgialac@gmail.com'
+  smtp_auth_username: 'thisisgialac@gmail.com'
+  smtp_auth_password: 'oohdcvrzpoyetequ'
   smtp_require_tls: true
 
 route:
-  receiver: 'multi-route'
+  receiver: multi-route
   group_wait: 30s
   group_interval: 5m
   repeat_interval: 3h
@@ -14,8 +14,23 @@ route:
 receivers:
   - name: multi-route
     email_configs:
-      - to: 'recipient@example.com'
+      - to: 'testingn8nuit@gmail.com'
         send_resolved: true
+        html: |-
+          {{ if eq .Status "firing" }}
+          <b>🔥 <font color="red">ALERT FIRING</font> 🔥</b><br/>
+          {{ range .Alerts }}
+          <b>Alert:</b> {{ .Labels.alertname }}<br/>
+          <b>Severity:</b> {{ .Labels.severity }}<br/>
+          <b>Summary:</b> {{ .Annotations.summary }}<br/>
+          <b>Description:</b> {{ .Annotations.description }}<br/><br/>
+          {{ end }}
+          {{ else }}
+          <b>✅ <font color="green">ALERT RESOLVED</font></b><br/>
+          {{ range .Alerts }}
+          <b>Alert:</b> {{ .Labels.alertname }} is now resolved<br/>
+          {{ end }}
+          {{ end }}
     webhook_configs:
       - url: 'http://diabetes-api:8000/alert'
         send_resolved: true

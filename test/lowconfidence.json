@@ -2,13 +2,13 @@
   "alerts": [
     {
       "labels": {
-        "alertname": "TestEmailAlert",
+        "alertname": "LowConfidence",
         "severity": "warning",
         "instance": "localhost:8000"
       },
       "annotations": {
-        "summary": "This is a test",
-        "description": "This alert should trigger an email"
+        "summary": "Low confidence",
+        "description": "Prediction confidence < 0.6"
       }
     }
   ]
