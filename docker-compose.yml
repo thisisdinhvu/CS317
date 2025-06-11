@@ -10,11 +10,9 @@ services:
     container_name: cs317-diabetes_api
     depends_on:
       - prometheus
-      # - fluentd
-    # command: >
-    #   sh -c "sleep 10 && uvicorn main:app --host 0.0.0.0 --port 8000"
     volumes:
       - ./logging:/logging
+      # - ./logging:/app/logs
     logging:
       driver: "json-file"
 
@@ -29,6 +27,7 @@ services:
       - "--web.enable-lifecycle" 
     ports:
       - "9090:9090"
+    restart: always
 
   alertmanager:
     image: prom/alertmanager
@@ -39,6 +38,7 @@ services:
       - "--config.file=/etc/alertmanager/config.yml"
     ports:
       - "9093:9093"
+    restart: always
 
 
   grafana:
@@ -52,6 +52,7 @@ services:
       - ./grafana/dashboards:/etc/grafana/dashboards
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+    restart: always
 
 
   node_exporter:
@@ -59,6 +60,7 @@ services:
     container_name: cs317-node_exporter
     ports:
       - "9100:9100"
+    restart: always
 
   loki:
     image: grafana/loki:2.9.0
@@ -71,12 +73,33 @@ services:
     command: -config.file=/etc/loki/local-config.yaml
     restart: always
 
+  # promtail:
+  #   image: grafana/promtail:2.9.0
+  #   container_name: cs317-promtail
+  #   volumes:
+  #     - ./logging:/app/logs:ro                 
+  #     - ./promtail/promtail-config.yaml:/etc/promtail/promtail-config.yaml
+  #     - promtail_positions:/tmp  
+  #   command: -config.file=/etc/promtail/promtail-config.yaml
+  #   depends_on:
+  #     - loki
+  #   user: root
+
   promtail:
     image: grafana/promtail:2.9.0
     container_name: cs317-promtail
-    volumes:
-      - ./logging:/logging
-      - ./promtail/promtail-config.yaml:/etc/promtail/promtail-config.yaml
-    command: -config.file=/etc/promtail/promtail-config.yaml
+    restart: always
+    user: root
     depends_on:
       - loki
+    command: -config.file=/etc/promtail/promtail-config.yaml
+    volumes:
+      - ./logging:/logging:ro                        # <-- api.log
+      - promtail_positions:/tmp                      # <-- positions.yaml
+      - ./promtail/promtail-config.yaml:/etc/promtail/promtail-config.yaml
+      - /var/log:/var/log:ro                         # <-- syslog
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  promtail_positions:
