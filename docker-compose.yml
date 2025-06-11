@@ -72,6 +72,7 @@ services:
       - ./loki/data:/loki        
     command: -config.file=/etc/loki/local-config.yaml
     restart: always
+    user: root
 
   # promtail:
   #   image: grafana/promtail:2.9.0
@@ -89,7 +90,6 @@ services:
     image: grafana/promtail:2.9.0
     container_name: cs317-promtail
     restart: always
-    user: root
     depends_on:
       - loki
     command: -config.file=/etc/promtail/promtail-config.yaml
@@ -100,6 +100,7 @@ services:
       - /var/log:/var/log:ro                         # <-- syslog
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    user: root
 
 volumes:
   promtail_positions:
