@@ -543,3 +543,4 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 2025-06-11 20:27:10,893 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.058s, confidence=0.8333333333333333
 2025-06-11 20:27:11,319 [INFO] sample.csv evaluated | acc=0.5000, f1=0.6667, latency=0.014s, confidence=0.8333333333333333
 2025-06-11 20:27:33,263 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
+2025-06-11 20:32:32,298 [WARNING] ALERT: LowConfidence | Severity: warning | Instance: diabetes-api:8000 | Description: Prediction confidence < 0.6
