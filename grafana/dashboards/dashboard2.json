@@ -1,7 +1,5 @@
 {
-  "annotations": {
-    "list": []
-  },
+  "annotations": { "list": [] },
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
@@ -10,32 +8,16 @@
   "links": [],
   "panels": [
     {
-            "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
-        "defaults": {
-          "unit": "s",
-          "decimals": 3
-        },
+        "defaults": { "unit": "s", "decimals": 3 },
         "overrides": []
       },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 0
-      },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 0 },
       "id": 1,
       "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
+        "legend": { "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
       },
       "targets": [
         {
@@ -49,30 +31,17 @@
       "type": "timeseries"
     },
     {
-            "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
-        "defaults": {
-          "unit": "none",
-          "decimals": 4
-        },
+        "defaults": { "unit": "none", "decimals": 4 },
         "overrides": []
       },
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 12,
-        "y": 0
-      },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 0 },
       "id": 2,
       "options": {
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
+          "calcs": ["mean"],
           "fields": "",
           "values": false
         },
@@ -90,32 +59,16 @@
       "type": "stat"
     },
     {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
-        "defaults": {
-          "unit": "reqps",
-          "decimals": 0
-        },
+        "defaults": { "unit": "reqps", "decimals": 0 },
         "overrides": []
       },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 6
-      },
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 6 },
       "id": 3,
       "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
+        "legend": { "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
       },
       "targets": [
         {
@@ -128,32 +81,16 @@
       "type": "timeseries"
     },
     {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
-        "defaults": {
-          "unit": "percent",
-          "decimals": 2
-        },
+        "defaults": { "unit": "percent", "decimals": 2 },
         "overrides": []
       },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 6
-      },
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 6 },
       "id": 4,
       "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
+        "legend": { "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
       },
       "targets": [
         {
@@ -166,108 +103,16 @@
       "type": "timeseries"
     },
     {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
-        "defaults": {
-          "unit": "percent",
-          "decimals": 2
-        },
+        "defaults": { "unit": "s", "decimals": 3 },
         "overrides": []
       },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 12
-      },
+      "gridPos": { "h": 6, "w": 24, "x": 0, "y": 12 },
       "id": 5,
       "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
-      },
-      "targets": [
-        {
-          "expr": "avg(rate(node_cpu_seconds_total{mode!=\"idle\"}[5m])) by (instance) * 100",
-          "legendFormat": "CPU Usage %",
-          "refId": "A"
-        }
-      ],
-      "title": "CPU Usage",
-      "type": "timeseries"
-    },
-    {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
-      "fieldConfig": {
-        "defaults": {
-          "unit": "percent",
-          "decimals": 0
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 12
-      },
-      "id": 6,
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
-      },
-      "targets": [
-        {
-          "expr": "(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100",
-          "legendFormat": "Used Memory",
-          "refId": "A"
-        }
-      ],
-      "title": "Memory Usage",
-      "type": "timeseries"
-    },
-    {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "prometheus"
-        },
-      "fieldConfig": {
-        "defaults": {
-          "unit": "s",
-          "decimals": 3
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 18
-      },
-      "id": 7,
-      "options": {
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
+        "legend": { "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
       },
       "targets": [
         {
@@ -282,18 +127,9 @@
   ],
   "schemaVersion": 36,
   "style": "dark",
-  "tags": [
-    "inference",
-    "model",
-    "performance"
-  ],
-  "templating": {
-    "list": []
-  },
-  "time": {
-    "from": "now-30m",
-    "to": "now"
-  },
+  "tags": ["inference", "model", "performance"],
+  "templating": { "list": [] },
+  "time": { "from": "now-30m", "to": "now" },
   "timepicker": {},
   "timezone": "",
   "title": "Model Inference Monitoring",
