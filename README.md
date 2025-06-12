@@ -462,7 +462,7 @@ curl.exe -X POST http://127.0.0.1:8000/evaluate `
 - Monitoring API Performance (Grafana + Prometheus)
 - Centralized Logging with Loki + Promtail
 
-*(Add YouTube links if applicable)*
+[*CS317: Lab 3 - Monitoring with Grafana and Prometheus*](https://www.youtube.com/watch?v=Sbtx0_T5trE)
 
 ---
 
